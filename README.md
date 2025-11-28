@@ -1,27 +1,47 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+# crud-dd-task-mean-app
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+A simple **CRUD MEAN application** (MongoDB, Express, Angular, Node.js) containerised with **Docker & Docker Compose**.  
+It exposes a REST API in the backend and an Angular UI in the frontend to create, read, update and delete records.  
+This project is part of an assignment to practice **Git, Docker, Docker Hub, and basic CI/CD on an Ubuntu VM**.
 
-## Project setup
+---
 
-### Node.js Server
+## 👤 Author
 
-cd backend
+**Name:** Shashank NJ  
+**GitHub:** [Shashank-nj](https://github.com/Shashank-nj)  
+**Repository:** https://github.com/Shashank-nj/crud-dd-task-mean-app  
 
-npm install
+---
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
+## 🧱 Tech Stack
 
-Run `node server.js`
+- **Frontend:** Angular (Angular 15 CRUD app)
+- **Backend:** Node.js + Express
+- **Database:** MongoDB
+- **Reverse Proxy:** Nginx
+- **Containerisation:** Docker & Docker Compose
+- **(Optional) CI/CD:** GitHub Actions → Ubuntu VM with Docker
 
-### Angular Client
+---
 
-cd frontend
+## 🗂 Project Structure (high level)
 
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+```text
+crud-dd-task-mean-app/
+├─ backend/          # Express + Mongoose API
+│  ├─ server.js
+│  ├─ app/
+│  │  ├─ models/    # Mongoose models
+│  │  ├─ routes/    # Express routes
+│  ├─ .env          # Backend environment variables (not committed)
+│  └─ Dockerfile
+├─ frontend/         # Angular application
+│  ├─ src/
+│  └─ Dockerfile
+├─ nginx/
+│  └─ conf.d/
+│     └─ default.conf  # Nginx config (proxy to frontend/backend)
+├─ docker-compose.yml
+├─ README.md
+└─ screenshots/      # (Optional) screenshots for assignment
